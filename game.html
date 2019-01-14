@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tic-Tac_Toe</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="game.css">
+  </head>
+  <body>
+    <div class="container" align="center">
+      <h1>Welcome to Tic-Tac-Toe</h1>
+      <h3>Let's start!</h3>
+
+      <table class="board">
+        <tr>
+          <td><button class="tile" id="b0" type="button"></button></td>
+          <td><button class="tile" id="b1" type="button"></button></td>
+          <td><button class="tile" id="b2" type="button"></button></td>
+        </tr>
+        <tr>
+          <td><button class="tile" id="b3" type="button"></button></td>
+          <td><button class="tile" id="b4" type="button"></button></td>
+          <td><button class="tile" id="b5" type="button"></button></td>
+        </tr>
+        <tr>
+          <td><button class="tile" id="b6" type="button"></button></td>
+          <td><button class="tile" id="b7" type="button"></button></td>
+          <td><button class="tile" id="b8" type="button"></button></td>
+        </tr>
+      </table><br>
+      <h2 id='winner'></h2><br>
+      <button id="newGame"type="button">New Game</button>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      crossorigin="anonymous"></script>
+    <script src="game.js"></script>
+  </body>
+</html>

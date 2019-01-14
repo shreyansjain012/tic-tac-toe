@@ -1,0 +1,26 @@
+.board button {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(130, 130, 130, 0.7);
+  color: black;
+  font-size: 35px;
+}
+.board {
+  margin-top: 100px;
+}
+#b0, #b1, #b2, #b3, #b4, #b5 {
+  border-bottom: 4px solid black;
+
+}
+#b0, #b1, #b6,#b3, #b4, #b7 {
+  border-right: 4px solid black;
+}
+
+#winner {
+  color: red;
+}
+#newGame {
+  background-color: rgb(8, 66, 160);
+  color: white;
+  height: 40px;
+}
