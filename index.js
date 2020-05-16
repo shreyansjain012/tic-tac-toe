@@ -106,6 +106,7 @@ $(document).ready(function (){
     $(".tile p").text("").removeClass('X').removeClass('O');
     $(".tile").removeClass("disable-div");
     $('#winner').text(tictactoe);
+    $(this).removeClass('highlight');
   })
 
   function changePlayer() {
@@ -123,8 +124,8 @@ $(document).ready(function (){
        ||$('#b2').text() === $('#b4').text() && $('#b2').text() ===$('#b6').text() && $('#b2').text() === 'X')
       {
         $('#winner').text(Player1Win);
-        $(".tile").addClass("disable-div");
-        audio['win'].play();
+        winUI();
+        highlight();
       }
       else if($('#b0').text() === $('#b1').text() && $('#b0').text() ===$('#b2').text() && $('#b0').text() === 'O'
         ||$('#b3').text() === $('#b4').text() && $('#b3').text() ===$('#b5').text() && $('#b3').text() === 'O'
@@ -136,13 +137,36 @@ $(document).ready(function (){
         ||$('#b0').text() === $('#b4').text() && $('#b0').text() ===$('#b8').text() && $('#b0').text() === 'O')
       {
         $('#winner').text(Player2Win);
-        $(".tile").addClass("disable-div");
-        audio['win'].play();
+        winUI();
+        highlight();
       }
       else if(count === 9)
       {
         $('#winner').text(itsDraw);
         audio['draw'].play();
+        highlight();
       }   
+  }
+  
+  function sleep(ms) {
+    return new Promise(function (resolve) {
+      setTimeout(resolve, ms);
+    });
+  }
+  
+  function highlight() {
+      $('#newGame').addClass('highlight');
+  }
+
+  async function winUI(){
+    $(".tile").addClass("disable-div");
+    audio['win'].play();
+    for(let i=0; i<3; i++){
+      $('.jumbotron').addClass('winUI-0');
+      await sleep(300);
+      $('.jumbotron').removeClass('winUI-0').addClass('winUI-1');  
+      await sleep(300);
+      $('.jumbotron').removeClass('winUI-1');  
+    }
   }
 });

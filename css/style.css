@@ -11,6 +11,11 @@
   pointer-events: none;
 }
 
+.highlight {
+  background-color: red;
+  color: white;
+}
+
 .jumbotron {
   background-color: blueviolet;
 }
@@ -39,8 +44,19 @@
   top: 20%;
 }
 
+.winUI-0 {
+  background-color: chartreuse;
+  color: red;
+}
+
+.winUI-1 {
+  background-color: blue;
+  color: white;
+}
+
 .X {
   color: red;
   font-size: 40px;
   font-family: 'Indie Flower', cursive;
 }
+
