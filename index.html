@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
     <title>Tic-Tac-Toe</title>
+    <link rel="icon" href="images/tictactoe.png" type="image/x-icon">
     
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
@@ -9,34 +11,34 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- CSS links -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
   </head>
   <body>
-    <div class="container" align="center">
-      <h1>Welcome to Tic-Tac-Toe</h1>
-      <h3>Let's start!</h3>
-
-      <table class="board">
-        <tr>
-          <td><button class="tile" id="b0" type="button"></button></td>
-          <td><button class="tile" id="b1" type="button"></button></td>
-          <td><button class="tile" id="b2" type="button"></button></td>
-        </tr>
-        <tr>
-          <td><button class="tile" id="b3" type="button"></button></td>
-          <td><button class="tile" id="b4" type="button"></button></td>
-          <td><button class="tile" id="b5" type="button"></button></td>
-        </tr>
-        <tr>
-          <td><button class="tile" id="b6" type="button"></button></td>
-          <td><button class="tile" id="b7" type="button"></button></td>
-          <td><button class="tile" id="b8" type="button"></button></td>
-        </tr>
-      </table><br>
-      <h2 id='winner'></h2><br>
-      <button id="newGame"type="button">New Game</button>
+    <div class="container text-center">
+      <div class="jumbotron">
+        <h1>Tic-Tac-Toe</h1>
+        <!-- <h2>Let's start!</h2> -->
+      </div>
+      <div class="row">
+        <div class="tile" id="b0"></div>
+        <div class="tile" id="b1"></div>
+        <div class="tile" id="b2"></div>
+      </div>
+      <div class="row">
+        <div class="tile" id="b3"></div>
+        <div class="tile" id="b4"></div>
+        <div class="tile" id="b5"></div>
+      </div>
+      <div class="row">
+        <div class="tile" id="b6"></div>
+        <div class="tile" id="b7"></div>
+        <div class="tile" id="b8"></div>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

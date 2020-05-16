@@ -1,81 +1,84 @@
 $(document).ready(function (){
-  var player, activePlayer;
-  var count = 0;
+  let count = 0;
 
-  player = ['X','O'];
-  activePlayer = 0;
+  const X = '<p class="vertical-center X">X</p>';
+  const O = '<p class="vertical-center O">O</p>';
+
+  const player = [X, O];
+  
+  let active = 0;
 
   function changePlayer() {
-      activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+      active === 0 ? active = 1 : active = 0;
   }
 
   $('#b0').click(function (){
-    $(this).text(player[activePlayer]);
-    $(this).attr("disabled", "true");
+    $(this).append(player[active]);
+    $(this).addClass('disable-div');
     changePlayer();
     count++;
     winCheck();
   })
 
   $('#b1').click(function (){
-    $(this).text(player[activePlayer]);
-    $(this).attr("disabled", "true");
+    $(this).append(player[active]);
+    $(this).addClass('disable-div');
     changePlayer();
     count++;
     winCheck();
   })
 
   $('#b2').click(function (){
-    $(this).text(player[activePlayer]);
-    $(this).attr("disabled", "true");
+    $(this).append(player[active]);
+    $(this).addClass('disable-div');
     changePlayer();
     count++;
     winCheck();
   })
 
   $('#b3').click(function (){
-    $(this).text(player[activePlayer]);
-    $(this).attr("disabled", "true");
+    $(this).append(player[active]);
+    $(this).addClass('disable-div');
     changePlayer();
     count++;
     winCheck();
   })
 
   $('#b4').click(function (){
-    $(this).text(player[activePlayer]);
-    $(this).attr("disabled", "true");
+    $(this).append(player[active]);
+    $(this).addClass('disable-div');
     changePlayer();
     count++;
     winCheck();
   })
 
   $('#b5').click(function (){
-    $(this).text(player[activePlayer]);
-    $(this).attr("disabled", "true");
+    $(this).append(player[active]);
+    $(this).addClass('disable-div');
     changePlayer();
     count++;
     winCheck();
   })
 
   $('#b6').click(function (){
-    $(this).text(player[activePlayer]);
-    $(this).attr("disabled", "true");
+    $(this).append(player[active]);
+    $(this).addClass('disable-div');
     changePlayer();
     count++;
     winCheck();
   })
 
   $('#b7').click(function (){
-    $(this).text(player[activePlayer]);
-    $(this).attr("disabled", "true");
+    $(this).append(player[active]);
+    $(this).addClass('disable-div');
     changePlayer();
     count++;
     winCheck();
   })
 
   $('#b8').click(function (){
-    $(this).text(player[activePlayer]);
-    $(this).attr("disabled", "true");
+    $(this).append(player[active]);
+    $(this).addClass('disable-div');
     changePlayer();
     count++;
     winCheck();
@@ -83,7 +86,7 @@ $(document).ready(function (){
 
   $('#newGame').click(function(){
       count = 0;
-      activePlayer = 0;
+      active = 0;
       $(".tile").text("");
       $(".tile").removeAttr('disabled');
       $('#winner').text("");

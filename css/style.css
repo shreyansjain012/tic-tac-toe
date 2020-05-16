@@ -1,26 +1,48 @@
-.board button {
-  width: 100px;
-  height: 100px;
-  background-color: rgba(130, 130, 130, 0.7);
+.jumbotron {
+  background-color: blueviolet;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+.disable-div {
+  pointer-events: none;
+}
+
+#newGame {
+  background-color: rgb(8, 66, 160);
+  color: white;
+  height: 40px;
+}
+
+.O {
   color: black;
   font-size: 35px;
+  font-family: 'Indie Flower', cursive;
 }
-.board {
-  margin-top: 100px;
-}
-#b0, #b1, #b2, #b3, #b4, #b5 {
-  border-bottom: 4px solid black;
 
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
 }
-#b0, #b1, #b6,#b3, #b4, #b7 {
-  border-right: 4px solid black;
+
+.tile {
+  background-color: rgb(203, 228, 235);
+  border: 2px solid white;
+  height: 100px;
+  width: 100px;
+  
+}
+.vertical-center {
+  position: relative;
+  top: 20%;
 }
 
 #winner {
   color: red;
 }
-#newGame {
-  background-color: rgb(8, 66, 160);
-  color: white;
-  height: 40px;
+
+.X {
+  color: red;
+  font-size: 35px;
+  font-family: 'Indie Flower', cursive;
 }
