@@ -4,15 +4,20 @@ $(document).ready(function (){
 
   const player = ['X', 'O'];
   
-  const audio = {};
+  const audio = {};  
   audio['move-0'] = new Audio();
   audio['move-0'].src = './sounds/move-0.wav';
   audio['move-1'] = new Audio();
   audio['move-1'].src = './sounds/move-1.wav';
-
-  function changePlayer() {
-      active === 0 ? active = 1 : active = 0;
-  }
+  audio['win'] = new Audio();
+  audio['win'].src = './sounds/win.mp3';
+  audio['draw'] = new Audio();
+  audio['draw'].src = './sounds/draw.mp3';
+  
+  const Player1Win = "Player 1 wins!";
+  const Player2Win = "Player 2 wins!";
+  const tictactoe = "Tic-Tac-Toe";
+  const itsDraw = "It's a draw!";
 
   $('#b0').click(function (){
     $('#b0 p').text(player[active]).addClass(player[active]);
@@ -100,8 +105,12 @@ $(document).ready(function (){
     active = 0;
     $(".tile p").text("").removeClass('X').removeClass('O');
     $(".tile").removeClass("disable-div");
-    $('#winner').text("");
+    $('#winner').text(tictactoe);
   })
+
+  function changePlayer() {
+    active === 0 ? active = 1 : active = 0;
+  }
 
   function checkForWin() {
     if($('#b0').text() === $('#b1').text() && $('#b0').text() ===$('#b2').text() && $('#b0').text() === 'X'
@@ -113,7 +122,9 @@ $(document).ready(function (){
        ||$('#b0').text() === $('#b4').text() && $('#b0').text() ===$('#b8').text() && $('#b0').text() === 'X'
        ||$('#b2').text() === $('#b4').text() && $('#b2').text() ===$('#b6').text() && $('#b2').text() === 'X')
       {
-        $('#winner').text("Player 1 wins!");
+        $('#winner').text(Player1Win);
+        $(".tile").addClass("disable-div");
+        audio['win'].play();
       }
       else if($('#b0').text() === $('#b1').text() && $('#b0').text() ===$('#b2').text() && $('#b0').text() === 'O'
         ||$('#b3').text() === $('#b4').text() && $('#b3').text() ===$('#b5').text() && $('#b3').text() === 'O'
@@ -124,12 +135,14 @@ $(document).ready(function (){
         ||$('#b2').text() === $('#b4').text() && $('#b2').text() ===$('#b6').text() && $('#b2').text() === 'O'
         ||$('#b0').text() === $('#b4').text() && $('#b0').text() ===$('#b8').text() && $('#b0').text() === 'O')
       {
-        $('#winner').text("Player 2 wins!");
+        $('#winner').text(Player2Win);
+        $(".tile").addClass("disable-div");
+        audio['win'].play();
       }
       else if(count === 9)
       {
-        $('#winner').text("It's a draw!");
-      }
+        $('#winner').text(itsDraw);
+        audio['draw'].play();
+      }   
   }
-
 });
