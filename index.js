@@ -104,7 +104,7 @@ $(document).ready(function (){
     count = 0;
     active = 0;
     $(".tile p").text("").removeClass('X').removeClass('O');
-    $(".tile").removeClass("disable-div");
+    $(".tile").removeClass("disable-div").removeClass('win-tile');
     $('#winner').text(tictactoe);
     $(this).removeClass('highlight');
   })
@@ -113,39 +113,48 @@ $(document).ready(function (){
     active === 0 ? active = 1 : active = 0;
   }
 
+  const winList = [
+    ['#b0', '#b1', '#b2'],
+    ['#b3', '#b4', '#b5'],
+    ['#b6', '#b7', '#b8'],
+    ['#b0', '#b3', '#b6'],
+    ['#b1', '#b4', '#b7'],
+    ['#b2', '#b5', '#b8'],
+    ['#b0', '#b4', '#b8'],
+    ['#b2', '#b4', '#b6'],
+  ];
+
   function checkForWin() {
-    if($('#b0').text() === $('#b1').text() && $('#b0').text() ===$('#b2').text() && $('#b0').text() === 'X'
-       ||$('#b3').text() === $('#b4').text() && $('#b3').text() ===$('#b5').text() && $('#b3').text() === 'X'
-       ||$('#b6').text() === $('#b7').text() && $('#b6').text() ===$('#b8').text() && $('#b6').text() === 'X'
-       ||$('#b0').text() === $('#b3').text() && $('#b0').text() ===$('#b6').text() && $('#b0').text() === 'X'
-       ||$('#b1').text() === $('#b4').text() && $('#b1').text() ===$('#b7').text() && $('#b1').text() === 'X'
-       ||$('#b2').text() === $('#b5').text() && $('#b2').text() ===$('#b8').text() && $('#b2').text() === 'X'
-       ||$('#b0').text() === $('#b4').text() && $('#b0').text() ===$('#b8').text() && $('#b0').text() === 'X'
-       ||$('#b2').text() === $('#b4').text() && $('#b2').text() ===$('#b6').text() && $('#b2').text() === 'X')
-      {
+    for(let i=0; i<8; i++) {
+      let sequence = winList[i];
+      let a = sequence[0];
+      let b = sequence[1];
+      let c = sequence[2];
+
+      if($(a).text() === $(b).text() && $(a).text() === $(c).text() && $(a).text() === 'X'){
         $('#winner').text(Player1Win);
-        winUI();
-        highlight();
+        highlightTile(a, b, c);
+        winOutcome();
+        highlightBtn();
       }
-      else if($('#b0').text() === $('#b1').text() && $('#b0').text() ===$('#b2').text() && $('#b0').text() === 'O'
-        ||$('#b3').text() === $('#b4').text() && $('#b3').text() ===$('#b5').text() && $('#b3').text() === 'O'
-        ||$('#b6').text() === $('#b7').text() && $('#b6').text() ===$('#b8').text() && $('#b6').text() === 'O'
-        ||$('#b0').text() === $('#b3').text() && $('#b0').text() ===$('#b6').text() && $('#b0').text() === 'O'
-        ||$('#b1').text() === $('#b4').text() && $('#b1').text() ===$('#b7').text() && $('#b1').text() === 'O'
-        ||$('#b2').text() === $('#b5').text() && $('#b2').text() ===$('#b8').text() && $('#b2').text() === 'O'
-        ||$('#b2').text() === $('#b4').text() && $('#b2').text() ===$('#b6').text() && $('#b2').text() === 'O'
-        ||$('#b0').text() === $('#b4').text() && $('#b0').text() ===$('#b8').text() && $('#b0').text() === 'O')
-      {
+      else if($(a).text() === $(b).text() && $(a).text() === $(c).text() && $(a).text() === 'O'){
         $('#winner').text(Player2Win);
-        winUI();
-        highlight();
+        highlightTile(a, b, c);
+        winOutcome();
+        highlightBtn();
       }
-      else if(count === 9)
-      {
+      else if(count === 9){
         $('#winner').text(itsDraw);
         audio['draw'].play();
-        highlight();
-      }   
+        highlightBtn();
+      }
+    }   
+  }
+
+  function highlightTile(a, b, c) {
+    $(a).addClass('win-tile');
+    $(b).addClass('win-tile');
+    $(c).addClass('win-tile');
   }
   
   function sleep(ms) {
@@ -154,19 +163,19 @@ $(document).ready(function (){
     });
   }
   
-  function highlight() {
+  function highlightBtn() {
       $('#newGame').addClass('highlight');
   }
 
-  async function winUI(){
+  async function winOutcome(){
     $(".tile").addClass("disable-div");
     audio['win'].play();
     for(let i=0; i<3; i++){
-      $('.jumbotron').addClass('winUI-0');
+      $('.jumbotron').addClass('winOutcome-0');
       await sleep(300);
-      $('.jumbotron').removeClass('winUI-0').addClass('winUI-1');  
+      $('.jumbotron').removeClass('winOutcome-0').addClass('winOutcome-1');  
       await sleep(300);
-      $('.jumbotron').removeClass('winUI-1');  
+      $('.jumbotron').removeClass('winOutcome-1');  
     }
   }
 });

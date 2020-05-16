@@ -44,6 +44,10 @@
   top: 20%;
 }
 
+.win-tile {
+  background-color: pink;
+}
+
 .winUI-0 {
   background-color: chartreuse;
   color: red;
