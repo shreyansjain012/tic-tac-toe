@@ -171,11 +171,11 @@ $(document).ready(function (){
     $(".tile").addClass("disable-div");
     audio['win'].play();
     for(let i=0; i<3; i++){
-      $('.jumbotron').addClass('winOutcome-0');
-      await sleep(300);
-      $('.jumbotron').removeClass('winOutcome-0').addClass('winOutcome-1');  
-      await sleep(300);
-      $('.jumbotron').removeClass('winOutcome-1');  
+      $('.jumbotron').addClass('winUI-0');
+      await sleep(250);
+      $('.jumbotron').removeClass('winUI-0').addClass('winUI-1');  
+      await sleep(250);
+      $('.jumbotron').removeClass('winUI-1');  
     }
   }
 });
