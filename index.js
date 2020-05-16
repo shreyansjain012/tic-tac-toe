@@ -2,9 +2,7 @@ $(document).ready(function (){
   let count = 0;
   let active = 0;
 
-  const X = '<p class="vertical-center X">X</p>';
-  const O = '<p class="vertical-center O">O</p>';
-  const player = [X, O];
+  const player = ['X', 'O'];
   
   const audio = {};
   audio['move-0'] = new Audio();
@@ -17,7 +15,7 @@ $(document).ready(function (){
   }
 
   $('#b0').click(function (){
-    $(this).append(player[active]);
+    $('#b0 p').text(player[active]).addClass(player[active]);
     $(this).addClass('disable-div');
     audio[`move-${active}`].play();
     changePlayer();
@@ -26,7 +24,7 @@ $(document).ready(function (){
   })
 
   $('#b1').click(function (){
-    $(this).append(player[active]);
+    $('#b1 p').text(player[active]).addClass(player[active]);
     $(this).addClass('disable-div');
     audio[`move-${active}`].play();
     changePlayer();
@@ -35,7 +33,7 @@ $(document).ready(function (){
   })
 
   $('#b2').click(function (){
-    $(this).append(player[active]);
+    $('#b2 p').text(player[active]).addClass(player[active]);
     $(this).addClass('disable-div');
     audio[`move-${active}`].play();
     changePlayer();
@@ -44,7 +42,7 @@ $(document).ready(function (){
   })
 
   $('#b3').click(function (){
-    $(this).append(player[active]);
+    $('#b3 p').text(player[active]).addClass(player[active]);
     $(this).addClass('disable-div');
     audio[`move-${active}`].play();
     changePlayer();
@@ -53,7 +51,7 @@ $(document).ready(function (){
   })
 
   $('#b4').click(function (){
-    $(this).append(player[active]);
+    $('#b4 p').text(player[active]).addClass(player[active]);
     $(this).addClass('disable-div');
     audio[`move-${active}`].play();
     changePlayer();
@@ -62,7 +60,7 @@ $(document).ready(function (){
   })
 
   $('#b5').click(function (){
-    $(this).append(player[active]);
+    $('#b5 p').text(player[active]).addClass(player[active]);
     $(this).addClass('disable-div');
     audio[`move-${active}`].play();
     changePlayer();
@@ -71,7 +69,7 @@ $(document).ready(function (){
   })
 
   $('#b6').click(function (){
-    $(this).append(player[active]);
+    $('#b6 p').text(player[active]).addClass(player[active]);
     $(this).addClass('disable-div');
     audio[`move-${active}`].play();
     changePlayer();
@@ -80,7 +78,7 @@ $(document).ready(function (){
   })
 
   $('#b7').click(function (){
-    $(this).append(player[active]);
+    $('#b7 p').text(player[active]).addClass(player[active]);
     $(this).addClass('disable-div');
     audio[`move-${active}`].play();
     changePlayer();
@@ -89,7 +87,7 @@ $(document).ready(function (){
   })
 
   $('#b8').click(function (){
-    $(this).append(player[active]);
+    $('#b8 p').text(player[active]).addClass(player[active]);
     $(this).addClass('disable-div');
     audio[`move-${active}`].play();
     changePlayer();
@@ -98,11 +96,11 @@ $(document).ready(function (){
   })
 
   $('#newGame').click(function(){
-      count = 0;
-      active = 0;
-      $(".tile").text("");
-      $(".tile").removeAttr('disabled');
-      $('#winner').text("");
+    count = 0;
+    active = 0;
+    $(".tile p").text("").removeClass('X').removeClass('O');
+    $(".tile").removeClass("disable-div");
+    $('#winner').text("");
   })
 
   function checkForWin() {

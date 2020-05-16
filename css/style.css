@@ -1,21 +1,23 @@
-.jumbotron {
-  background-color: blueviolet;
+* {
   font-family: 'Alfa Slab One', cursive;
+}
+
+.btn {
+  background-color: #0275d8;
+  color: black;
 }
 
 .disable-div {
   pointer-events: none;
 }
 
-#newGame {
-  background-color: rgb(8, 66, 160);
-  color: white;
-  height: 40px;
+.jumbotron {
+  background-color: blueviolet;
 }
 
 .O {
   color: black;
-  font-size: 35px;
+  font-size: 40px;
   font-family: 'Indie Flower', cursive;
 }
 
@@ -43,6 +45,6 @@
 
 .X {
   color: red;
-  font-size: 35px;
+  font-size: 40px;
   font-family: 'Indie Flower', cursive;
 }
