@@ -1,12 +1,16 @@
 $(document).ready(function (){
   let count = 0;
+  let active = 0;
 
   const X = '<p class="vertical-center X">X</p>';
   const O = '<p class="vertical-center O">O</p>';
-
   const player = [X, O];
   
-  let active = 0;
+  const audio = {};
+  audio['move-0'] = new Audio();
+  audio['move-0'].src = './sounds/move-0.wav';
+  audio['move-1'] = new Audio();
+  audio['move-1'].src = './sounds/move-1.wav';
 
   function changePlayer() {
       active === 0 ? active = 1 : active = 0;
@@ -15,73 +19,82 @@ $(document).ready(function (){
   $('#b0').click(function (){
     $(this).append(player[active]);
     $(this).addClass('disable-div');
+    audio[`move-${active}`].play();
     changePlayer();
     count++;
-    winCheck();
+    checkForWin();
   })
 
   $('#b1').click(function (){
     $(this).append(player[active]);
     $(this).addClass('disable-div');
+    audio[`move-${active}`].play();
     changePlayer();
     count++;
-    winCheck();
+    checkForWin();
   })
 
   $('#b2').click(function (){
     $(this).append(player[active]);
     $(this).addClass('disable-div');
+    audio[`move-${active}`].play();
     changePlayer();
     count++;
-    winCheck();
+    checkForWin();
   })
 
   $('#b3').click(function (){
     $(this).append(player[active]);
     $(this).addClass('disable-div');
+    audio[`move-${active}`].play();
     changePlayer();
     count++;
-    winCheck();
+    checkForWin();
   })
 
   $('#b4').click(function (){
     $(this).append(player[active]);
     $(this).addClass('disable-div');
+    audio[`move-${active}`].play();
     changePlayer();
     count++;
-    winCheck();
+    checkForWin();
   })
 
   $('#b5').click(function (){
     $(this).append(player[active]);
     $(this).addClass('disable-div');
+    audio[`move-${active}`].play();
     changePlayer();
     count++;
-    winCheck();
+    checkForWin();
   })
 
   $('#b6').click(function (){
     $(this).append(player[active]);
     $(this).addClass('disable-div');
+    audio[`move-${active}`].play();
     changePlayer();
     count++;
-    winCheck();
+    checkForWin();
   })
 
   $('#b7').click(function (){
     $(this).append(player[active]);
     $(this).addClass('disable-div');
+    audio[`move-${active}`].play();
     changePlayer();
     count++;
-    winCheck();
+    checkForWin();
   })
 
   $('#b8').click(function (){
     $(this).append(player[active]);
     $(this).addClass('disable-div');
+    audio[`move-${active}`].play();
     changePlayer();
     count++;
-    winCheck();
+    checkForWin();
   })
 
   $('#newGame').click(function(){
@@ -92,7 +105,7 @@ $(document).ready(function (){
       $('#winner').text("");
   })
 
-  function winCheck() {
+  function checkForWin() {
     if($('#b0').text() === $('#b1').text() && $('#b0').text() ===$('#b2').text() && $('#b0').text() === 'X'
        ||$('#b3').text() === $('#b4').text() && $('#b3').text() ===$('#b5').text() && $('#b3').text() === 'X'
        ||$('#b6').text() === $('#b7').text() && $('#b6').text() ===$('#b8').text() && $('#b6').text() === 'X'
@@ -120,4 +133,5 @@ $(document).ready(function (){
         $('#winner').text("It's a draw!");
       }
   }
+
 });
