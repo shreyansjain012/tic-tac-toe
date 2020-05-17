@@ -123,7 +123,7 @@ $(document).ready(function (){
     ['#b0', '#b4', '#b8'],
     ['#b2', '#b4', '#b6'],
   ];
-
+  
   function checkForWin() {
     for(let i=0; i<8; i++) {
       let sequence = winList[i];
@@ -136,12 +136,14 @@ $(document).ready(function (){
         highlightTile(a, b, c);
         winOutcome();
         highlightBtn();
+        break;
       }
       else if($(a).text() === $(b).text() && $(a).text() === $(c).text() && $(a).text() === 'O'){
         $('#winner').text(Player2Win);
         highlightTile(a, b, c);
         winOutcome();
         highlightBtn();
+        break;
       }
       else if(count === 9){
         $('#winner').text(itsDraw);
