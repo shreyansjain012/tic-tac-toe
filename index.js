@@ -123,7 +123,7 @@ $(document).ready(function (){
     ['#b0', '#b4', '#b8'],
     ['#b2', '#b4', '#b6'],
   ];
-  
+
   function checkForWin() {
     for(let i=0; i<8; i++) {
       let sequence = winList[i];
@@ -145,7 +145,7 @@ $(document).ready(function (){
         highlightBtn();
         break;
       }
-      else if(count === 9){
+      else if(count === 9 && i===7){
         $('#winner').text(itsDraw);
         audio['draw'].play();
         highlightBtn();
